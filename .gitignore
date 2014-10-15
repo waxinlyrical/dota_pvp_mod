@@ -43,16 +43,18 @@ Temporary Items
 .apdisk
 
 # non text files
-.bin
-.*_c
-.vmat_c
-.vtex_c
-.vpk
+*.bin
+&.*_c
+*.vmat_c
+*.vtex_c
+*.vpk
 
 maps/dota_pvp.vpk
 maps/dota_pvp_tiled.vpk
 *.vmat_c
 *.vtex_c
 *.bin
+*.bin
+tools_thumbnail_cache.bin
 *.bin
 tools_thumbnail_cache.bin
