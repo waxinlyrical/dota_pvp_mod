@@ -2,6 +2,9 @@
 Dota PvP game mode
 ]]
 
+require('chin_hero_abilities')
+require('chin_util')
+
 print( "Dota PvP game mode loaded." )
 
 if DotaPvP == nil then

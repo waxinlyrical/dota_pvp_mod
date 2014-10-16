@@ -110,13 +110,39 @@
 		                "EffectAttachType" "follow_origin"
 		                "Target" "TARGET"		                               
 		            }
-		        }			        
+
+		            "RunScript"
+					{
+						"ScriptFile"		"chin_hero_abilities.lua"
+						"Function"		"prot_monk_rof_buff_OnCreated"						
+					}	
+		        }
+
+		        "OnDestroy"
+		        {
+		        	"RunScript"
+					{
+						"ScriptFile"		"chin_hero_abilities.lua"
+						"Function"		"prot_monk_rof_buff_OnDestroy"						
+					}	
+
+		        }
 
 				"Duration" "%duration"
-				"Properties"
+				//"Properties"
+				//{
+				//	"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
+				//	"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"5"
+				//}
+
+				"OnTakeDamage"
 				{
-					"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"5"
+					"RunScript"
+					{
+						"ScriptFile"		"chin_hero_abilities.lua"
+						"Function"		"prot_monk_rof_buff_OnDamage"						
+					}			
+
 				}
 				
 				
@@ -135,7 +161,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_absorb"				"200 300 400 500"
+				"damage_absorb"				"100 200 300 400"
 			}
 		}
 	}
@@ -169,8 +195,7 @@
 
 		"precache"
 		{
-			"particle_folder"				"particles/units/heroes/hero_omniknight"			
-			//"soundfile"					"soundevents/game_sounds/ability_aoe_spikes.vsndevts"
+			"particle_folder"				"particles/units/heroes/hero_omniknight"						
 		}
 
 		"OnSpellStart"
